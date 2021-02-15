@@ -24,7 +24,7 @@ class TriggeredImageTopic():
         else:
             rospy.loginfo('Camera name is: ' + self.camera_name)
 
-        self._grab_imgs_rect_ac = SimpleActionClient('{}/grab_images_rect'.format(self.camera_name),
+        self._grab_imgs_rect_ac = SimpleActionClient('{}/grab_images_raw'.format(self.camera_name),
                                                      GrabImagesAction)
 
         if self._grab_imgs_rect_ac.wait_for_server(rospy.Duration(10.0)):
